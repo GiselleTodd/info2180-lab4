@@ -1,51 +1,43 @@
-window.onload = function(){
-
-var classname = document.querySelectorAll(".boundary");
+window.onload =() =>{
 
 
-for (var i = 0; i < classname.length; i++) {
-    classname[i].addEventListener('mouseover', youLose);
-}
+  let boundary = document.querySelectorAll(".boundary");
+  let boundary1 = document.getElementById("boundary1");
+  let start = document.getElementById("start");
+  let end = document.getElementById("end");
+  let maze = document.getElementById("maze");
+  let tap = 0;
 
-document.getElementById('end').addEventListener('mouseover', youWin);
-document.getElementById('start').addEventListener('click', restart);
-document.getElementById('maze').addEventListener('mouseout', antiCheat);
+
+  boundary1.addEventListener("mouseover", youLose);
+
+
+
+  function youLose(){
+
+
+      
+  }
+
+
+  function youWin(){
+
+
+  }
+
+  function startOver(){
+
+
+
+  }
+
+  function noCheat(){
+
+
+
+
+  }
+
 
 
 };
-
-
-
-function youLose(){
-	var classname = document.querySelectorAll(".boundary");
-
-	for (var i = 0; i < classname.length; i++) {
-    classname[i].classList.add("youlose");
-	document.getElementById('status').innerHTML = "you Lose!";
-	}
-}
-
-
-
-function youWin(){
-	var q =document.getElementsByClassName('youlose');
-
-	if(q.length == 0)
-		document.getElementById('status').innerHTML = "you Win!";
-}
-
-
-function restart(){
-	var boundaries = document.querySelectorAll(".boundary");
-
-	for (var i = 0; i < boundaries.length; i++) {
-    boundaries[i].classList.remove("youlose");
-	}
-
-	document.getElementById('status').innerHTML = "Good Luck!";
-}
-
-
-function antiCheat(){
-	youLose()
-}
